@@ -1,0 +1,21 @@
+<tr id="event-<%= event.id %>">
+  <td><%= event.title %></td>
+  <td><%= event.description %></td>
+  <td><%= event.location %></td>
+  <td><%= event.event_date %></td>
+  <td>
+    <%= button_to "Edit", edit_event_path(event),
+              method: :get,
+              remote: true,
+              form: { data: { turbo: false } },
+              class: "btn-edit" %>
+
+
+    <%= button_to "Delete", event_path(event),
+                  method: :delete,
+                  remote: true,
+                  form: { data: { turbo: false } },
+                  class: "btn-delete",
+                  data: { confirm: "Are you sure?" } %>
+  </td>
+</tr>

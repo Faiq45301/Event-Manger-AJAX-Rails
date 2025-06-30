@@ -1,0 +1,2 @@
+console.log("Editing event <%= @event.id %>");
+document.querySelector("#event-form").innerHTML = `<%= j render 'form', event: @event %>`;

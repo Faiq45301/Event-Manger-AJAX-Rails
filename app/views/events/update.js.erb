@@ -1,0 +1,2 @@
+document.querySelector("#event-<%= @event.id %>").outerHTML = "<%= j render @event %>";
+document.querySelector("#event-form").innerHTML = "<%= j render 'form', event: Event.new %>";

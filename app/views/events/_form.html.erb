@@ -1,0 +1,28 @@
+<%= form_with(model: event,
+              url: event.persisted? ? event_path(event) : events_path,
+              method: event.persisted? ? :patch : :post,
+              remote: true,
+              html: { id: "event-form-fields" }) do |f| %>
+
+  <div style="margin-bottom: 10px;">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-input" %>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-input" %>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, class: "form-input" %>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <%= f.label :event_date %><br>
+    <%= f.date_field :event_date, class: "form-input" %>
+  </div>
+
+  <%= f.submit event.persisted? ? "Update Event" : "Create Event", class: "btn-submit" %>
+<% end %>
